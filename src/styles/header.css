@@ -1,0 +1,9 @@
+#mainHeader {
+  display: grid;
+  grid-row:1/2;
+  grid-column: 1/5;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  background-color: #888;
+}
