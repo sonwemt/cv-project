@@ -16,7 +16,7 @@ export default class Experience extends Component {
         taskings: '',
         start: '',
         end: '',
-        status: 0,
+        showEdit: false,
         index: false,
         id: uniqid(),
       }
@@ -30,7 +30,7 @@ export default class Experience extends Component {
 
   editExperience = (index) => {
     const newArray = Array.from(this.state.experienceList);
-    newArray[index].status = 1;
+    newArray[index].showEdit = true;
     this.setState({
       experienceList:  newArray,
     })
@@ -51,7 +51,7 @@ export default class Experience extends Component {
     const newArray = Array.from(this.state.experienceList);
     const index = info.index;
     const newInfo = info;
-    newInfo.status = false;
+    newInfo.showEdit = false;
     newArray.splice(index, 1, newInfo);
     this.setState({
       experienceList:  newArray,
@@ -70,7 +70,7 @@ export default class Experience extends Component {
         taskings: '',
         start: '',
         end: '',
-        status: 0,
+        showEdit: false,
         index: false,
         id: uniqid(),
       }

@@ -1,11 +1,10 @@
 #educationContainer{
   display: grid;
-  place-self: center;
+  justify-self: center;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-column: 2/3;
   grid-row: 3/4;
-  width: 10rem;
-  gap: 5rem;
+  width: 100%;
 }
 
 #educationForm {

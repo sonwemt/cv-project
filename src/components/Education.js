@@ -15,7 +15,7 @@ export default class Education extends Component {
         study: '',
         start: '',
         end: '',
-        status: 0,
+        showEdit: false,
         index: false,
         id: uniqid(),
       },
@@ -30,7 +30,7 @@ export default class Education extends Component {
 
   editEducation = (index) => {
     const newArray = Array.from(this.state.educationList);
-    newArray[index].status = 1;
+    newArray[index].showEdit = true;
     this.setState({
       educationList:  newArray,
     })
@@ -51,7 +51,7 @@ export default class Education extends Component {
     const newArray = Array.from(this.state.educationList);
     const index = info.index;
     const newInfo = info;
-    newInfo.status = false;
+    newInfo.showEdit = false;
     newArray.splice(index, 1, newInfo);
     this.setState({
       educationList:  newArray,
@@ -68,7 +68,7 @@ export default class Education extends Component {
         study: '',
         start: '',
         end: '',
-        status: 0,
+        showEdit: false,
         index: false,
         id: uniqid(),
       },

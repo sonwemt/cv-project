@@ -55,9 +55,12 @@ export default class Information extends Component {
     return (
       <div id="contactInfoContainer">
         <form id="contactInfoForm" onSubmit={this.onEditContactInfo}>
-          <div>Full Name: {this.state.name}<br/></div>
-          <div>Email: {this.state.email}<br/></div>
-          <div>Phone Number: {this.state.phoneNumber}<br/></div>
+          <div>Full Name: </div>
+          <div>{this.state.name}</div>
+          <div>Email: </div>
+          <div>{this.state.email}</div>
+          <div>Phone Number: </div>
+          <div>{this.state.phoneNumber}</div>
           <button type="submit" >Edit</button>
         </form>
       </div>

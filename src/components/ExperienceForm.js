@@ -80,7 +80,7 @@ export default class ExperienceForm extends Component {
         taskings: this.state.experience.taskings,
         start: this.state.experience.start,
         end: this.state.experience.end,
-        status: this.props.experience.status,
+        showEdit: this.props.experience.showEdit,
         index: this.props.experience.index,
         id: this.props.experience.id,
     }
@@ -115,7 +115,7 @@ export default class ExperienceForm extends Component {
         <label htmlFor="experienceEnd">End date: </label>
         <input type="date" id="experienceEnd" value={this.state.experience.end} onChange={this.handleEndChange} />
 
-        <button type="submit">{!this.props.experience.status ? 'Add' : 'Update'}</button>
+        <button type="submit">{!this.props.experience.showEdit ? 'Add' : 'Update'}</button>
       </form>
     );
   }

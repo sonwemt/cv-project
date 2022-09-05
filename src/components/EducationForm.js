@@ -63,7 +63,7 @@ export default class EducationForm extends Component {
       study: this.state.education.study,
       start: this.state.education.start,
       end: this.state.education.end,
-      status: this.props.education.status,
+      showEdit: this.props.education.showEdit,
       index: this.props.education.index,
       id: this.props.education.id,
     };
@@ -93,7 +93,7 @@ export default class EducationForm extends Component {
         <label htmlFor="studyEnd">End date: </label>
         <input type="date" id="studyEnd" value={this.state.education.end} onChange={this.handleEndChange} />
 
-        <button type="submit">{!this.props.education.status ? 'Add' : 'Update'}</button>
+        <button type="submit">{!this.props.education.showEdit ? 'Add' : 'Update'}</button>
       </form>
     );
   }

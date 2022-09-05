@@ -1,15 +1,16 @@
 #contactInfoContainer{
   display: grid;
-  place-self: center;
+  justify-self: center;
   grid-template-rows: 1fr 1fr 1fr;
   grid-column: 2/3;
   grid-row: 2/3;
-  width: 20rem;
-  gap: 1rem;
-  padding: 3rem;
+  width: 100%;
 }
 
 #contactInfoForm {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: 100%;
+  row-gap: 1rem;
+  padding: 3rem;
 }

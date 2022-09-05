@@ -20,7 +20,7 @@ export default class ExperienceOverview extends Component{
   render() {
     return (
       this.props.experiences.map((experience) => {
-        if(experience.status) {
+        if(experience.showEdit) {
           return (
             <div key={experience.id}>
               <ExperienceForm experience={experience} submit={this.props.submit} />

@@ -20,7 +20,7 @@ export default class EducationOverview extends Component{
   render() {
     return (
       this.props.educationList.map((education) => {
-        if(education.status) {
+        if(education.showEdit) {
           return (
             <div key={education.id}>
               <EducationForm education={education} submit={this.props.submit} />
