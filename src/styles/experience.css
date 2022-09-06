@@ -1,13 +1,26 @@
 #experienceContainer{
   display: grid;
-  place-self: center;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  border: 1px solid black;
+  border-top: 0px;
+  place-content: center;
   grid-column: 2/3;
   grid-row: 4/5;
-  width: 10rem;
-  gap: 5rem;
+  width: 100%;
+  row-gap: 2rem;
+  padding: 2rem 0 2rem 0;
+  background-color: rgba(215, 215, 215, 0.349);
+}
+
+#experienceEntries {
+  display: grid;
+  row-gap: 3rem;
+}
+
+#experienceEntry {
+ display: grid;
 }
 
 .experienceForm {
   display: grid;
+  width: 10rem;
 }

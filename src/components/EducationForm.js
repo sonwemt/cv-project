@@ -80,7 +80,7 @@ export default class EducationForm extends Component {
 
   render() {
     return(
-      <form id="educationForm" onSubmit={this.handleSubmit}>
+      <form className="educationForm" onSubmit={this.handleSubmit}>
         <label htmlFor="schoolNameInput">Name of school: </label>
         <input type="text" id="schoolNameInput" value={this.state.education.school} onChange={this.handleSchoolChange} />
 

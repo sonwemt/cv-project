@@ -78,17 +78,22 @@ export default class Education extends Component {
   render() {
     return (
       <div id="educationContainer">
-        <EducationOverview 
-          educationList={this.state.educationList} 
-          editEducation={this.editEducation} 
-          deleteEducation={this.deleteEducation} 
-          submit={this.onEditSubmit}
-        />
-        <EducationForm
-          education={this.state.education}
-          submit={this.onEducationSubmit}
-        />
+        <h2 className="subheader">Education</h2>
+        <div id="educationEntries">
+          <EducationOverview
+            educationList={this.state.educationList}
+            editEducation={this.editEducation}
+            deleteEducation={this.deleteEducation}
+            submit={this.onEditSubmit}
+          />
+        </div>
+        <div id="educationMainForm">
+          <EducationForm
+            education={this.state.education}
+            submit={this.onEducationSubmit}
+          />
+        </div>
       </div>
-    )
+    );
   }
 }

@@ -80,16 +80,21 @@ export default class Experience extends Component {
   render() {
     return (
       <div id="experienceContainer">
-        <ExperienceOverview 
-        experiences={this.state.experienceList} 
-        editExperience={this.editExperience} 
-        deleteExperience={this.deleteExperience} 
-        submit={this.onEditSubmit}
-        />
-        <ExperienceForm
-        experience={this.state.experience}
-        submit={this.onExperienceSubmit}
-        />
+        <h2 className="subheader">Experience</h2>
+        <div id="experienceEntries">
+          <ExperienceOverview
+            experiences={this.state.experienceList}
+            editExperience={this.editExperience}
+            deleteExperience={this.deleteExperience}
+            submit={this.onEditSubmit}
+          />
+        </div>
+        <div id="experienceMainForm">
+          <ExperienceForm
+            experience={this.state.experience}
+            submit={this.onExperienceSubmit}
+          />
+        </div>
       </div>
     );
   }

@@ -1,16 +1,28 @@
 #contactInfoContainer{
   display: grid;
-  justify-self: center;
-  grid-template-rows: 1fr 1fr 1fr;
+  border: 1px solid black;
+  place-content: center;
   grid-column: 2/3;
   grid-row: 2/3;
   width: 100%;
+  background-color: rgba(215, 215, 215, 0.349);
 }
 
 #contactInfoForm {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  justify-self: center;
   width: 100%;
-  row-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1.5rem;
   padding: 3rem;
+}
+
+#contactInfoForm, input, div{
+  width: 10rem;
+}
+
+.editButton, .submitButton {
+  width: 10rem;
+  height: 2rem;
+  background-color: rgba(145, 255, 184, 0.656);
 }

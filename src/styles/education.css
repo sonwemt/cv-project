@@ -1,12 +1,26 @@
 #educationContainer{
   display: grid;
-  justify-self: center;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  border: 1px solid black;
+  border-top: 0px;
+  place-content: center;
   grid-column: 2/3;
   grid-row: 3/4;
   width: 100%;
+  row-gap: 2rem;
+  background-color: rgba(215, 215, 215, 0.349);
+  padding: 2rem 0 2rem 0;
 }
 
-#educationForm {
+#educationEntries {
   display: grid;
+  row-gap: 3rem;
+}
+
+#educationEntry {
+ display: grid;
+}
+
+.educationForm {
+  display: grid;
+  width: 10rem;
 }

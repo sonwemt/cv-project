@@ -28,11 +28,15 @@ export default class EducationOverview extends Component{
           )
         }
         return(
-        <div key={education.id}>
-          School: {education.school}<br />
-          Type of study: {education.study}<br />
-          Start date: {education.start}<br />
-          End date: {education.end}<br />
+        <div key={education.id} id="educationEntry">
+          <div>School:</div>
+          <div>{education.school}</div>
+          <div>Type of study:</div>
+          <div>{education.study}</div>
+          <div>Start date:</div>
+          <div>{education.start}</div>
+          <div>End date:</div>
+          <div>{education.end}</div>
           <button data-id={education.index} onClick={this.onEdit}>Edit</button>
           <button data-id={education.index} onClick={this.onDelete}>Delete</button>
         </div>

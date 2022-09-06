@@ -45,7 +45,7 @@ export default class Information extends Component {
           <input type="email" id="emailInput" value={this.state.email} onChange={this.onEmailChange}/>
           <label htmlFor="phoneNumberInput">Phone Number: </label>
           <input type="number" id="phoneNumberInput" value={this.state.phoneNumber} onChange={this.onPhoneChange} />
-          <input type="submit" id="submitContactInfo" />
+          <button type="submit" className="submitButton" >Submit Info</button>
         </form>
       </div>
     );
@@ -61,7 +61,7 @@ export default class Information extends Component {
           <div>{this.state.email}</div>
           <div>Phone Number: </div>
           <div>{this.state.phoneNumber}</div>
-          <button type="submit" >Edit</button>
+          <button type="submit" className="editButton">Edit Info</button>
         </form>
       </div>
     )
