@@ -5,13 +5,11 @@ export default class ExperienceForm extends Component {
     super(props);
 
     this.state = {
-      experience: {
-        company: this.props.experience.company,
-        position: this.props.experience.position,
-        taskings: this.props.experience.taskings,
-        start: this.props.experience.start,
-        end: this.props.experience.end,
-      }
+      company: this.props.experience.company,
+      position: this.props.experience.position,
+      taskings: this.props.experience.taskings,
+      start: this.props.experience.start,
+      end: this.props.experience.end,
     }
 
     this.handleCompanyChange.bind(this);
@@ -23,77 +21,45 @@ export default class ExperienceForm extends Component {
   }
 
   handleCompanyChange = (e) => {
-    this.setState({experience: {
-      company: e.target.value,
-      position: this.state.experience.position,
-      taskings: this.state.experience.taskings,
-      start: this.state.experience.start,
-      end: this.state.experience.end,
-    }});
+    this.setState({company: e.target.value});
   }
 
   handlePositionChange = (e) => {
-    this.setState({experience: {
-      company: this.state.experience.company,
-      position: e.target.value,
-      taskings: this.state.experience.taskings,
-      start: this.state.experience.start,
-      end: this.state.experience.end,
-    }});
+    this.setState({position: e.target.value});
   }
 
   handleTaskingsChange = (e) => {
-    this.setState({experience: {
-      company: this.state.experience.company,
-      position: this.state.experience.position,
-      taskings: e.target.value,
-      start: this.state.experience.start,
-      end: this.state.experience.end,
-    }});
+    this.setState({taskings: e.target.value});
   }
 
   handleStartChange = (e) => {
-    this.setState({experience: {
-      company: this.state.experience.company,
-      position: this.state.experience.position,
-      taskings: this.state.experience.taskings,
-      start: e.target.value,
-      end: this.state.experience.end,
-    }});
+    this.setState({start: e.target.value});
   }
 
   handleEndChange = (e) => {
-    this.setState({experience: {
-      company: this.state.experience.company,
-      position: this.state.experience.position,
-      taskings: this.state.experience.taskings,
-      start: this.state.experience.start,
-      end: e.target.value,
-    }});
+    this.setState({end: e.target.value});
   }
 
   handleSubmit = (e) =>{
     e.preventDefault();
     const submitInfo = {
-        company: this.state.experience.company,
-        position: this.state.experience.position,
-        taskings: this.state.experience.taskings,
-        start: this.state.experience.start,
-        end: this.state.experience.end,
+        company: this.state.company,
+        position: this.state.position,
+        taskings: this.state.taskings,
+        start: this.state.start,
+        end: this.state.end,
         showEdit: this.props.experience.showEdit,
         index: this.props.experience.index,
         id: this.props.experience.id,
-    }
+    };
     this.props.submit(submitInfo);
     this.setState({
-      experience: {
         company: this.props.experience.company,
         position: this.props.experience.position,
         taskings: this.props.experience.taskings,
         start: this.props.experience.start,
         end: this.props.experience.end,
-      }
-    })
+    });
   }
 
 
@@ -101,19 +67,19 @@ export default class ExperienceForm extends Component {
     return(
       <form className="experienceForm" onSubmit={this.handleSubmit}>
         <label htmlFor="companyNameInput">Name of company: </label>
-        <input type="text" id="companyNameInput" value={this.state.experience.company} onChange={this.handleCompanyChange} />
+        <input type="text" id="companyNameInput" value={this.state.company} onChange={this.handleCompanyChange} />
 
         <label htmlFor="positionInput">Position: </label>
-        <input type="text" id="positionInput" value={this.state.experience.position} onChange={this.handlePositionChange} />
+        <input type="text" id="positionInput" value={this.state.position} onChange={this.handlePositionChange} />
 
         <label htmlFor="taskInput">Tasks: </label>
-        <input type="text" id="taskInput" value={this.state.experience.taskings} onChange={this.handleTaskingsChange} />
+        <input type="text" id="taskInput" value={this.state.taskings} onChange={this.handleTaskingsChange} />
 
         <label htmlFor="experinceStart">Start date: </label>
-        <input type="date" id="experienceStart" value={this.state.experience.start} onChange={this.handleStartChange} />
+        <input type="date" id="experienceStart" value={this.state.start} onChange={this.handleStartChange} />
 
         <label htmlFor="experienceEnd">End date: </label>
-        <input type="date" id="experienceEnd" value={this.state.experience.end} onChange={this.handleEndChange} />
+        <input type="date" id="experienceEnd" value={this.state.end} onChange={this.handleEndChange} />
 
         <button type="submit">{!this.props.experience.showEdit ? 'Add' : 'Update'}</button>
       </form>

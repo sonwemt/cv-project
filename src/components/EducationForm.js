@@ -5,12 +5,10 @@ export default class EducationForm extends Component {
     super(props)
 
     this.state = {
-      education: {
-        school: this.props.education.school,
-        study: this.props.education.study,
-        start: this.props.education.start,
-        end: this.props.education.end,
-      }
+      school: this.props.education.school,
+      study: this.props.education.study,
+      start: this.props.education.start,
+      end: this.props.education.end,
     }
 
     this.handleSchoolChange.bind(this);
@@ -21,77 +19,55 @@ export default class EducationForm extends Component {
   } 
   
   handleSchoolChange = (e) => {
-    this.setState({education: {
-      school: e.target.value,
-      study: this.state.education.study,
-      start: this.state.education.start,
-      end: this.state.education.end,
-    }});
+    this.setState({ school: e.target.value });
   }
 
   handleStudyChange = (e) => {
-    this.setState({education: {
-      school: this.state.education.school,
-      study: e.target.value,
-      start: this.state.education.start,
-      end: this.state.education.end,
-    }});
+    this.setState({ study: e.target.value });
   }
 
   handleStartChange = (e) => {
-    this.setState({education: {
-      school: this.state.education.school,
-      study: this.state.education.study,
-      start: e.target.value,
-      end: this.state.education.end,
-    }});
+    this.setState({start: e.target.value});
   }
 
   handleEndChange = (e) => {
-    this.setState({education: {
-      school: this.state.education.school,
-      study: this.state.education.study,
-      start: this.state.education.start,
-      end: e.target.value,
-    }});
+    this.setState({end: e.target.value,});
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     const submitInfo = {
-      school: this.state.education.school,
-      study: this.state.education.study,
-      start: this.state.education.start,
-      end: this.state.education.end,
+      school: this.state.school,
+      study: this.state.study,
+      start: this.state.start,
+      end: this.state.end,
       showEdit: this.props.education.showEdit,
       index: this.props.education.index,
       id: this.props.education.id,
     };
     this.props.submit(submitInfo);
     this.setState({
-      education: {
         school: this.props.education.school,
         study: this.props.education.study,
         start: this.props.education.start,
         end: this.props.education.end,
-      }
-    })
+    });
   }
 
   render() {
     return(
       <form className="educationForm" onSubmit={this.handleSubmit}>
         <label htmlFor="schoolNameInput">Name of school: </label>
-        <input type="text" id="schoolNameInput" value={this.state.education.school} onChange={this.handleSchoolChange} />
+        <input type="text" id="schoolNameInput" value={this.state.school} onChange={this.handleSchoolChange} />
 
         <label htmlFor="studyInput">Type of study: </label>
-        <input type="text" id="studyInput" value={this.state.education.study} onChange={this.handleStudyChange} />
+        <input type="text" id="studyInput" value={this.state.study} onChange={this.handleStudyChange} />
 
         <label htmlFor="studyStart">Start date: </label>
-        <input type="date" id="studyStart" value={this.state.education.start} onChange={this.handleStartChange} />
+        <input type="date" id="studyStart" value={this.state.start} onChange={this.handleStartChange} />
 
         <label htmlFor="studyEnd">End date: </label>
-        <input type="date" id="studyEnd" value={this.state.education.end} onChange={this.handleEndChange} />
+        <input type="date" id="studyEnd" value={this.state.end} onChange={this.handleEndChange} />
 
         <button type="submit">{!this.props.education.showEdit ? 'Add' : 'Update'}</button>
       </form>
